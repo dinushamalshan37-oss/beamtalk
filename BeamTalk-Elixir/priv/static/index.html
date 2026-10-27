@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="BeamTalk — real-time chat in Elixir and Phoenix." />
+  <title>BeamTalk · Real-time Chat</title>
+  <link rel="stylesheet" href="/assets/app.css" />
+  <script defer src="/assets/app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-icon">✦</span><span>BeamTalk<small>PHOENIX + ELIXIR</small></span></div>
+      <div class="sidebar-label">CHANNELS</div>
+      <nav id="rooms" aria-label="Chat rooms">
+        <button type="button" class="room active" data-room="general"># general</button>
+        <button type="button" class="room" data-room="developers"># developers</button>
+        <button type="button" class="room" data-room="random"># random</button>
+      </nav>
+      <form id="join-room" class="add-room"><input id="room-name" aria-label="Room name" pattern="[a-zA-Z0-9_-]{2,30}" placeholder="New room..." maxlength="30" /><button title="Add room">+</button></form>
+      <div class="sidebar-footer"><span class="status-dot"></span><span id="status">Disconnected</span><span class="version">v0.1</span></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar"><div><div class="eyebrow">WORKSPACE / CHAT</div><h1 id="room-title"># general</h1></div><div class="top-right"><span class="online-bubble"><span class="status-dot"></span> <strong id="user-count">0</strong> online</span><button id="change-name" class="outline">Change name</button></div></header>
+      <div id="banner" class="banner" role="status">Enter a nickname to connect.</div>
+      <section id="messages" class="messages" aria-live="polite" aria-label="Messages"><div class="empty">Conversation starts here. Say hello 👋</div></section>
+      <form id="composer" class="composer"><input id="message-input" aria-label="Message" maxlength="500" placeholder="Message #general" autocomplete="off" disabled /><button id="send" type="submit" disabled>Send ↗</button></form>
+      <div class="hint">Press Enter to send · Maximum 500 characters · Demo stores last 100 messages per room in memory</div>
+    </main>
+    <aside class="members"><div class="sidebar-label">ONLINE MEMBERS</div><div id="member-list" class="member-list"></div></aside>
+  </div>
+  <dialog id="name-dialog"><form method="dialog" id="name-form"><h2>Welcome to BeamTalk</h2><p>Choose a nickname to join live chat.</p><label for="nickname">Your nickname</label><input autofocus id="nickname" minlength="2" maxlength="24" placeholder="e.g. developer37" required /><div class="dialog-actions"><button type="submit" value="confirm">Join chat →</button></div></form></dialog>
+</body>
+</html>

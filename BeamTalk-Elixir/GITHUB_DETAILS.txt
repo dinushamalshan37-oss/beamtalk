@@ -1,0 +1,6 @@
+Name: BeamTalk
+Repository: beamtalk
+Language: Elixir
+GitHub Description:
+Real-time group chat built with Elixir, Phoenix Channels and Presence, featuring rooms, message history and online members.
+Topics: elixir, phoenix, websocket, realtime-chat, presence, portfolio
